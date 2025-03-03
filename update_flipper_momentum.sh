@@ -11,7 +11,7 @@ if ! command -v git &>/dev/null; then
     exit 1
 fi
 
-# We need to clone it somewhere, I piked here. You can change it.
+# We need to clone it somewhere, I picked here. You can change it.
 if [ ! -d "$DEFAULT_CLONE_DIR" ]; then
     read -rp "Directory '$DEFAULT_CLONE_DIR' does not exist. Enter a new directory or press Enter to create: " CLONE_DIR
     CLONE_DIR="${CLONE_DIR:-$DEFAULT_CLONE_DIR}"
