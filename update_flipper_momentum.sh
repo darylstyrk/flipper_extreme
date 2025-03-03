@@ -1,17 +1,17 @@
 #!/bin/bash
 
-set -euo pipefail  # Safer error handling
+set -euo pipefail  # error handling
 
 REPO_URL="https://github.com/Next-Flip/Momentum-Firmware.git"
 DEFAULT_CLONE_DIR="$HOME/code/Momentum-Firmware"
 
-# Check if git is installed
+# git is required
 if ! command -v git &>/dev/null; then
     echo "Error: Git is not installed. Please install git and retry."
     exit 1
 fi
 
-# Ask user for CLONE_DIR if it doesn't exist
+# We need to clone it somewhere, I piked here. You can change it.
 if [ ! -d "$DEFAULT_CLONE_DIR" ]; then
     read -rp "Directory '$DEFAULT_CLONE_DIR' does not exist. Enter a new directory or press Enter to create: " CLONE_DIR
     CLONE_DIR="${CLONE_DIR:-$DEFAULT_CLONE_DIR}"
